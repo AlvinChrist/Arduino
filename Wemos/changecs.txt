@@ -1,0 +1,33 @@
+#changepwdform{
+	border-radius:25px;
+	height:250px;
+	width:250px;
+	border:2px solid #ad9;
+	padding:25px;
+	margin:25px;
+	background-color:#ad9;
+} 
+#oldpwd{
+	border-radius:4px;
+	width:230px;
+}
+#newpwd{
+	border-radius:4px;
+	width:230px;
+}
+#repeatpwd{
+	border-radius:4px;
+	width:230px;
+}
+#changepwdbutton{
+	border-radius:4px;
+}
+#cancelbutton{
+	border-radius:4px;
+}
+body{
+        background-color:#333;
+}
+h1{
+        color:#925;
+}

@@ -1,0 +1,35 @@
+	document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false)
+function checkTime(i){
+	if(i<10){
+		i="0"+i;
+	}
+	return i;
+}
+function startTime(){
+	var minggu = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+	var today = new Date();
+	var hari = parseInt(today.getDay());
+	var tanggal = today.getDate();
+	var bulan = today.getMonth()+1;
+	var tahun = parseInt(today.getYear())-100;
+	var h = today.getHours();
+	var m = today.getMinutes();
+	var s = today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	document.getElementById("tanggal").innerHTML=minggu[hari]+","+tanggal+"-"+bulan+"-"+'20'+tahun;
+	document.getElementById("clock").innerHTML=h+":"+m+":"+s;
+	var t = setTimeout(startTime,500);
+}
+function logout(){
+	document.getElementById("hiddenlog").value = document.getElementById("tanggal").innerHTML+" | "+ document.getElementById("clock").innerHTML;
+	window.location.replace("/login?DISCONNECT=YES")
+}
+function changepwd(){
+	window.location.replace("/changepwd")
+}
+function configuresens(){
+        window.location.replace("/configuresensor")
+}

@@ -1,0 +1,52 @@
+#light_button_on{
+	border-radius:2px;
+	font-size:100%;
+	background-color:#0A0;
+}
+#showlog{
+        border-radius:2px;
+}
+#eraselog{
+        border-radius:2px;
+}
+#light_button_off{
+	border-radius:2px;
+	font-size:100%;
+}
+#clock{
+	border-radius:12px;
+	font-size:20px;
+	border:2px solid #4b5;
+	width:100px;
+	border-top-color:#4d5;
+	background-color:#4d5;
+	color:#000;
+}
+#tanggal{
+	border-radius:12px;
+	font-size:20px;
+	border:2px solid #4b5;
+	border-bottom-color:1px #4d5;
+	width:200px;
+	background-color:#4d5;
+	color:#000;
+}
+h1{
+	color:#925;
+	font-size:34px;
+}
+body{
+	background-color:#333;
+}
+#logoutbutton{
+	border-radius:4px;
+}
+#changepwdbutton{
+	border-radius:4px;
+}
+#configuresensor{
+        border-radius:4px;
+}
+#sensortime{
+        border-radius:4px;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="changecs.txt" />
+<link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIAAaAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAAFzUkdCAK7OHOkAAAAEZ0FNQQAAsY8L/GEFAAAACXBIWXMAAA7DAAAOwwHHb6hkAAACr0lEQVQ4T42S30sUURTH55/opQgsNDPT1DX7RfTTDEvJzAqpQPNHKiUUQkb1EkUQRCGBYCpFRFQmVg/RD8zqIWyJ/PloPbTj7s69d3Z2ZmdmF+PbPXd68MGHHg5z55zv59xzzzlahPE5NjUjYr19It59RRgNTcKoqRNGRZVge/cro7PyyRhpSEsMsVrEcRy3qxv2ytWw8wph5xfDLgzB3lAKu2hjYHQmH8VII7XEEKvpwhRWYwt4bgF4yab/M6klhlhNN5iwTjaAry1cWryUSS0xxGo64zJBI7gsjRWUgOUXgRWXgYc2g8nSmSydhwKQySdQPEjQCGKDJzS3gWXlQJRXInG0PkgkYV62DXzrjiCRBM3qWpiHjoCtWgOr6UzwBNkIYbafg1VTh/TXcfgjr+Dc7UF82Qp4T54iMzMLY3kW7O7LSI99hv/uPey2szBbO6iJQvvtecK8dgPWwRpkJqfgDjyA1dqubvdHx5D+FoZZewzJzvPIhL/D7etHorIa5vWbIFaLpFzB5U2JigNIdl1E6l4v/A+j6saFn7+Q+TEB79mQKj3ZeQHe8Aj8R4/BBx8ikkpRD4QwxsOwTrciI2/zhoaR6h+E9/I17EtXkag/Bf/jGJw7PUh/+gL/zVs4t27DkM8lVtPno8Lw04g3NMMs3YLE8ROqaWLXvmAiueshdpaDyYUyqw4jsacCcbkDhueDWE3X54WRcqFPTgfdzs5TY2QFoWCcND6aCvly1im/PjEFxUhWVcAYR8R1EX3+AlyKOM1+8eKQkU/GSENaYoIKKAEX9CMDHmL3B8CzZRJaGLlMyugsfRQjDWn/MXIKetRJ2o7KyIQJY+EPhGxgcvtu2HLnyehMPoqRhrTEEKvp0dicIdNRNnoTfSNyvvr0rIi3dCijs/It0igmGpv7CxdM7RY4dt0yAAAAAElFTkSuQmCC" />
+<title> Change Password </title>
+<h1 align="center"> Change Password </h1>
+</head>
+<body>
+<div align="center">
+<div id="changepwdform">
+<form action='/changepwd' method="POST" >
+<div align="left"><label for="oldpwd" id="oldpwdlabel"><strong>Current Password &nbsp: </strong></label>
+<input type="text" id="oldpwd" name="OLDPWD" placeholder="current password" required /><br/><br/>
+<label for="newpwd" id="newpwdlabel"><strong>New Passsword &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp: </strong></label>
+<input type="password" id="newpwd" name="NEWPWD" placeholder="new password" required /><br/><br/>
+<label for="repeatpwd" id="repeatpwdlabel"><strong>Repeat Password &nbsp &nbsp:</strong></label>
+<input type="password" id="repeatpwd" name="REPEATPWD" placeholder="repeat password" required/><br/>
+<br />
+<input type="checkbox" onchange="document.getElementById('newpwd').type = this.checked ? 'text' : 'password';document.getElementById('repeatpwd').type = this.checked ? 'text' : 'password'"/>show password 
+<br/>
+<br/>
+<input type="button" value="cancel" id="cancelbutton" onclick="window.location.replace('/');"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="submit" name="SUBMIT" id="changepwdbutton" value="Submit" />
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

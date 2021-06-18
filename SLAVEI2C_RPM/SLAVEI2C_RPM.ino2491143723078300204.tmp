@@ -1,0 +1,96 @@
+#include <Wire.h>
+#include <DMD2.h>
+#include <fonts/test.h>
+#define ADDR 3 //0 1 2
+
+SPIDMD dmd(4, 4);
+DMD_TextBox box(dmd);
+
+byte c, d,dataArr[4];
+bool mode;
+uint16_t data[2], prevData[2];
+char inData[2][5];
+bool startData, endData;
+uint64_t prevMillis;
+void setup() {
+  Wire.begin(ADDR);
+  Wire.setClock(100000);
+  Serial.begin(115200);
+  Serial.println(F("Slave"));
+  delay(500);
+  Wire.onRequest(sendMeasurement);
+  dmd.setBrightness(255);
+  dmd.selectFont(test);
+  dmd.begin();
+  delay(200);
+}
+
+void sendMeasurement() {
+  byte x;
+  for(int i=0;i<2;i++){
+    dataArr[x]=prevData[i]>>8;
+    x+=1;
+    dataArr[x]=prevData[i] &0xFF;
+    x+=1;
+  }
+  Wire.write(dataArr,4);
+  //Serial.print(ratusan);
+  //Serial.print('\t');
+  //Serial.println(desimal);
+
+  //Serial.println(prevData);
+}
+
+void foo(){
+  
+}
+void dmdChange(){
+  prevMillis=millis();
+  dmd.clearScreen();
+  if(mode){//sensor arus
+
+    mode=!mode;
+  }
+  else{// sensor arah angin
+
+    mode=!mode;
+  }
+}
+
+void loop() {
+  while (Serial.available()) {
+    char inChar = (byte)Serial.read();
+    switch (inChar) {
+      case '#': //10
+        startData = false;
+        endData = true;
+        break;
+      case '*': //13
+        c = 0;
+        d = 0;
+        memset(inData, 0, sizeof(inData));
+        startData = true;
+        endData = false;
+        break;
+      case ',':
+        if (c < 3) {
+          data[c] = 0;
+          data[c] = atoi(inData[c]);
+          (data[c]!=prevData[c])?prevData[c]=data[c]:0;
+          c += 1;
+          d = 0;
+        }
+        break;
+      default:
+        if (startData) {
+          inData[c][d] = inChar;
+          d += 1;
+        }
+        break;
+    }
+  }
+  (millis()-prevMillis>=5000)?dmdChange():foo();
+  if (endData) {
+    endData = false;
+  }
+}

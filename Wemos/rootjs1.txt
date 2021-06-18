@@ -1,0 +1,48 @@
+	document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false)
+function checkTime(i){
+	if(i<10){
+		i="0"+i;
+	}
+	return i;
+}
+function startTime(){
+	var minggu = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+	var today = new Date();
+	var hari = parseInt(today.getDay());
+	var tanggal = today.getDate();
+	var bulan = today.getMonth()+1;
+	var tahun = parseInt(today.getYear())-100;
+	var h = today.getHours();
+	var m = today.getMinutes();
+	var s = today.getSeconds();
+	m = checkTime(m);
+	s = checkTime(s);
+	document.getElementById("tanggal").innerHTML=minggu[hari]+","+tanggal+"-"+bulan+"-"+'20'+tahun;
+	document.getElementById("clock").innerHTML=h+":"+m+":"+s;
+	var t = setTimeout(startTime,500);
+	document.getElementById("Status").value="YES";
+}
+function logout(){
+	document.getElementById("hiddenlog").value = document.getElementById("tanggal").innerHTML+" | "+ document.getElementById("clock").innerHTML;
+}
+function changepwd(){
+	window.location.replace("/changepwd");
+}
+function sensortime(){
+        window.location.replace("/sensortime")
+}
+function configuresens(){
+        window.location.replace("/configuresensor");
+}
+function showlog(){
+        window.location.replace("/LOG");
+}
+function eraselog(){
+        var ask;
+        ask = confirm("Do you want to erase the log? This action cannot be undo");
+        if(ask==true){
+                window.location.replace("/eraselog")
+        }
+}

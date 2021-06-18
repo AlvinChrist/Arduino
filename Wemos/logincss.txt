@@ -1,0 +1,57 @@
+#clock{
+	border-radius:12px;
+	font-size:20px;
+	border:2px solid #4b5;
+	width:100px;
+	border-top-color:#4d5;
+	background-color:#4d5;
+	color:#000;
+}
+#tanggal{
+	border-radius:12px;
+	font-size:20px;
+	border:2px solid #4b5;
+	border-bottom-color:1px #4d5;
+	width:200px;
+	background-color:#4d5;
+	color:#000;
+}
+#text{
+	font-size:16px;
+	color:#000;
+}
+body{
+	background-color:#333;
+}
+h1{
+	color:#b6f;font-size:34px;
+}
+#loginform{
+	border-radius:25px;
+	height:180px;
+	width:250px;
+	border:2px solid #16f;
+	padding:25px;
+	margin:25px;
+	background-color:#39f;
+} 
+#loginbutton{
+	border-radius:4px;
+	margin-right:20px;
+}
+#usernamelabel{
+	color:white;
+	font-size:18px;
+}
+#username{
+	border-radius:4px;
+	width:230px;
+}
+#passwordlabel{
+	color:white;
+	font-size:18px;
+}
+#password{
+	border-radius:4px;
+	width:230px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPEhtml>
+<html>
+  <head>
+     <link rel="stylesheet" type="text/css" href="cfgcss.txt" />
+    <h1> Configure Sensor & Light Operating Time </h1>
+  </head>
+  <body>
+    <div id="timeform">
+      <form action="/configuresensor" METHOD="POST">
+       <span style="color:#b6f;"><strong>  Sensor Operating Time :</strong></span>
+       <br />
+       <br />
+        <label for="sensorstarttime" id="starttimelabel"><span style="color:#abc;">Start time </span></label>
+          <input type="time" id="sensorstarttime" name="SENSORSTARTTIME" />
+        <br />
+        <br />
+        <label for="sensorendtime" id="endtimelabel"><span style="color:#abc;">End time </span></label>
+        &nbsp
+          <input type="time" id="sensorendtime" name="SENSORENDTIME" />
+        <br />
+        <br />
+        <hr></hr>
+        <span style="color:#b6f;"><strong>  Light Operating Time :</strong></span>
+        <br />
+       <br />
+        <label for="lightstarttime" id="starttimelabel"><span style="color:#abc;">Start time </span></label>
+          <input type="time" id="lightstarttime" name="LIGHTSTARTTIME" />
+        <br />
+        <br />
+        <label for="lightendtime" id="endtimelabel"><span style="color:#abc;">End time </span></label>
+        &nbsp
+          <input type="time" id="lightendtime" name="LIGHTENDTIME" />
+        <br />
+        <br />
+        <input type="button" id="cancelbutton" onclick="window.location.replace('/');" value="cancel" />
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <input type="submit" id="cfgsubmit" name="SUBMIT" value="submit" />
+        </form>
+     </div>
+  </body>
+</html>

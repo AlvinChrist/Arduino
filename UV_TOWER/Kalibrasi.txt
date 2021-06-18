@@ -1,0 +1,9 @@
+const int XP=8,XM=A2,YP=A3,YM=9; //240x320 ID=0x9341
+const int TS_LEFT=94,TS_RT=944,TS_TOP=72,TS_BOT=885;
+PORTRAIT CALIBRATION     240 x 320
+x = map(p.x, LEFT=94, RT=944, 0, 240)
+y = map(p.y, TOP=72, BOT=885, 0, 320)
+Touch Pin Wiring XP=8 XM=A2 YP=A3 YM=9
+LANDSCAPE CALIBRATION    320 x 240
+x = map(p.y, LEFT=72, RT=885, 0, 320)
+y = map(p.x, TOP=944, BOT=94, 0, 240)

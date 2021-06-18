@@ -1,0 +1,21 @@
+body{
+    background-color:#333;
+}
+#timeform{
+    border-radius:25px;
+    height:300px;
+	width:250px;
+	border:2px solid #123;
+	padding:25px;
+	margin:5px;
+	background-color:#123;
+}
+h1{
+   color:#925;
+}
+#cancelbutton{
+     border-radius:4px;
+}
+#cfgsubmit{
+     border-radius:4px;
+}
